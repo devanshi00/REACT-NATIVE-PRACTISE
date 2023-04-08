@@ -1,0 +1,84 @@
+import React, {useState} from 'react';
+import ExStyles from './style'
+
+
+import {
+
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  Button,
+} from 'react-native';
+
+const App=() =>{
+  const[name,setName]=useState('');
+  const[email,setEmail]=useState('');
+  const[password,setPassword]=useState('');
+  const[display,setDisplay]=useState(false);
+  const reset=()=>{
+  setDisplay(false);
+  setName("");
+  setEmail("");
+  setPassword("");
+
+  }
+  
+  
+  return(
+  <View>
+  <Text style={{fontSize:30,color:'red'}}>Forms  </Text>
+  <TextInput style={styles.textbox} placeholder='Enter User Name'
+  onChangeText={(val)=>setName(val)}
+  value={name}
+ ></TextInput>
+  <TextInput style={styles.textbox} placeholder='Enter User Password'
+  onChangeText={(val)=>setPassword(val)}
+  secureTextEntry={true}
+  value={password}
+ ></TextInput>
+  <TextInput style={styles.textbox} placeholder='Enter User Email'
+  onChangeText={(val)=>setEmail(val)}
+  value={email}
+ ></TextInput>
+ <View style={{marginBottom:20}} >{/*Note to use style on button we have to use view tag */}
+ <Button color={'green'} style={{marginBottom:1000}} title='Print Details'
+ onPress={()=>setDisplay(true)} />
+ </View>
+ <Button color={'red'} title='Clear Details' onPress={reset} />
+ <View>{display?<View>
+
+  <Text style={{fontSize:20, color:'blue'}}>UserName is:{name}</Text>
+  <Text style={{fontSize:20, color:'blue'}}>UserPassword is:{password}</Text>
+  <Text style={{fontSize:20, color:'blue'}}>UserEmail is:{email}</Text>
+  </View>:null
+  }
+  </View>
+ 
+
+      
+    </View>
+  );
+};
+const styles=StyleSheet.create({
+  textbox:{
+    color:'yellow',
+    fontSize:25,
+    backgroundColor:"lightpink",
+    marginTop:20,
+    marginBottom:10,
+    padding:10, 
+    borderRadius:20,
+    height:100,
+    textAlignVertical:'center',
+    textAlign:'center',
+  
+
+
+  }
+})
+
+
+
+
+export default App;

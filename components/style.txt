@@ -1,0 +1,49 @@
+import React, {useState} from 'react';
+import ExStyles from './style'
+
+
+import {
+
+  Text,
+  Button,
+  View,
+  StyleSheet,
+} from 'react-native';
+
+const App=() =>{
+  
+  return(
+  <View>
+  <Text style={{fontSize:30,color:'red',backgroundColor:'yellow'}}>Style in React Native </Text>
+  <Text style={styles.textbox}>Style in React Native </Text>
+  <Text style={ExStyles.textbox}>Style in React Native </Text>
+  <Text style={[{marginTop:200, color:'pink'},ExStyles.textbox,styles.textbox]}>Style in React Native
+  {/*Note here external and internal whatever property not present in one and present in other is shown. Preference order is just as left to right things are overridden   */}</Text>
+
+
+      
+      
+    </View>
+  );
+};
+const styles=StyleSheet.create({
+  textbox:{
+    color:'yellow',
+    fontSize:25,
+    backgroundColor:"blue",
+    marginTop:60,
+    marginBottom:10,
+    padding:10,
+    borderRadius:20,
+    height:100,
+    textAlignVertical:'center',
+    textAlign:'center',
+
+
+  }
+})
+
+
+
+
+export default App;

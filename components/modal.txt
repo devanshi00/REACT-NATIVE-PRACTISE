@@ -1,0 +1,67 @@
+import React,{Component, useState} from 'react';
+import { View, StyleSheet,Text,TouchableHighlight, ActivityIndicator,Button,Modal } from 'react-native';
+  
+const App = () => {
+  const[modal,setmodal]=useState(false);
+
+
+  return (
+   <View style={styles.container}>
+      <Modal
+      transparent={true}
+      visible={modal}
+      animationType='fade'
+      >
+        <View style={styles.centeredview}>
+          <View style={styles.modalview}>
+            <Text style={styles.modaltext}>Hey People</Text>
+            <Button title='Close Modal' onPress={()=>setmodal(false)} />
+
+          </View>
+        </View>
+      </Modal>
+      <View style={styles.buttonview}>
+        <Button title='Open Modal' onPress={()=>setmodal(true)}/>
+      </View>
+      </View>
+    
+  )
+}
+
+  
+export default App;
+  
+const styles = StyleSheet.create ({
+  container: {
+  flex:1,justifyContent:'center',
+   
+  },
+  buttonview:{
+    flex:1,
+    justifyContent:'flex-end'
+  },
+  centeredview:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  modalview:{
+    backgroundColor:'skyblue',
+    padding:40,
+    borderRadius:20,
+    shadowColor:'black',
+    elevation:5,
+  },
+  modaltext:{
+fontSize:30,
+marginBottom:20,
+  }
+  
+ 
+ 
+  
+ 
+
+ 
+   
+})

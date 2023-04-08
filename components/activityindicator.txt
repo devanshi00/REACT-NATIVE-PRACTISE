@@ -1,0 +1,76 @@
+import React,{Component, useState} from 'react';
+import { View, StyleSheet,Text,TouchableHighlight, ActivityIndicator,Button } from 'react-native';
+  
+const App = () => {
+  const[show,setshow]=useState(false);
+  const displayLoader=()=>{
+    setshow(true);
+    setTimeout(()=>{
+      setshow(false)
+    },5000);
+  }
+
+  return (
+   <View style={styles.container}>
+      <ActivityIndicator size={100} color={'green'} animating={show} /><Text>{/*animating value is false initially since show state is false*/}</Text> 
+      <Button title='show loader' onPress={displayLoader} />
+      </View>
+    
+  )
+}
+const User=()=>{
+  return(
+    <Text style={{fontSize:30,color:'pink',backgroundColor:'blue'}}>Hey Devanshi</Text>
+  )
+}
+  
+export default App;
+  
+const styles = StyleSheet.create ({
+  container: {
+  flex:1,justifyContent:'center',
+   
+  },
+  box1:{
+    backgroundColor:'red',
+    margin:10, borderWidth: 2,
+    borderColor: "blue",
+    borderRadius: 50,
+    color:'yellow',
+    padding:10,
+    margin:10,
+    textAlign:'center'
+
+  },
+  box2:{
+    flex:1,backgroundColor:'yellow'
+  },
+  box3:{
+    flex:1,backgroundColor:'green'
+  },
+  innerbox1:{
+  flex:1,
+ 
+  backgroundColor:'pink',
+ 
+
+  },
+  innerbox2:{
+    flex:1,
+    margin:10,
+    backgroundColor:'lightgreen',
+    borderWidth: 5,
+    borderColor: "thistle",
+    borderRadius: 50,
+  
+    },
+    innerbox3:{
+      flex:1,
+      margin:10,
+      backgroundColor:'lightyellow',
+      borderWidth: 5,
+      borderColor: "thistle",
+      borderRadius: 50,
+    
+      },
+})

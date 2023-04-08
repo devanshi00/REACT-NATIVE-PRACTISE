@@ -1,0 +1,96 @@
+import React, {useState} from 'react';
+import ExStyles from './style'
+
+
+import {
+
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  Button,
+  FlatList,
+  ScrollViewComponent,
+  SectionList,
+} from 'react-native';
+
+const App=() =>{
+const user=[
+  {
+    id:1,
+    name:'Devu',
+    data:['css','java'],
+    
+  },
+  {
+    id:2,
+    name:'Heeru',
+    data:['python','javas'],
+  },
+  {
+    id:3,
+    name:'Vaibhu',
+    data:['css','java'],
+  
+  },
+  {
+    id:4,
+    name:'Vidhuu',
+    data:['css','java'],
+  },
+]
+  
+  
+  return(
+  <View>
+ 
+  <SectionList
+  sections={user}
+  renderItem={({item})=><Text style={{fontSize:20,marginLeft:20
+  }}>{item}</Text>}
+  renderSectionHeader={({section:{name}})=>(
+    <Text style={{fontSize:25,color:'red'}}>{name}</Text>
+  )}
+  />
+ 
+
+      
+    </View>
+  );
+};
+
+
+const styles=StyleSheet.create({
+  textbox:{
+    color:'darkblue',
+    fontSize:25,
+    backgroundColor:"lightpink",
+    flex:1,
+ 
+ 
+    borderRadius:20,
+ 
+   
+    
+
+
+  },
+  container :{
+    flex:1,
+    backgroundColor:"lightyellow",
+   flexDirection:'row',
+   width:150,
+    
+   
+    
+    
+    
+
+   
+  }
+})
+
+
+
+
+export default App;

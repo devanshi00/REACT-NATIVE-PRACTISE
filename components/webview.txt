@@ -1,0 +1,20 @@
+import React,{Component, useState} from 'react';
+import { View, StyleSheet,Text,TouchableHighlight, ActivityIndicator,Button,StatusBar } from 'react-native';
+import {WebView} from 'react-native-webview';
+  
+const App = () => {
+  
+
+  
+
+    
+ 
+  return (
+    <WebView source={{uri:"https://www.pluralsight.com/guides/implement-conditional-action-on-state-in-react-redux"}}/>
+   );
+
+  
+  
+  };
+export default App;
+

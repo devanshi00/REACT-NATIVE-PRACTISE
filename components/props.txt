@@ -1,0 +1,39 @@
+import React, {useState} from 'react';
+
+
+import {
+
+  Text,
+  Button,
+  View,
+} from 'react-native';
+
+const App=() =>{
+  const[name,setName]=useState("Devanshi")
+
+  return(
+  <View>
+   
+
+ <Button title='Press Here' onPress={()=>setName('Shrey')} color={'yellow'}></Button>
+ <User name={name} age={29}></User>
+ <Text>{/*props are basically arguments which are used to transfer data from one component to other.
+ Also data from child component can be transferred to parent but its little tricky. The state created holds the data of parent component app so it is to be transferred to child component via props. */}</Text>
+      
+      
+    </View>
+  );
+};
+const User=(props)=>{
+  return(
+    <View style={{backgroundColor:'green',padding:5}}>
+      <Text>Name:{props.name}</Text>
+      <Text>Age:{props.age}</Text>
+    </View>
+  )
+}
+
+
+
+
+export default App;

@@ -1,0 +1,96 @@
+import React, {useState} from 'react';
+import ExStyles from './style'
+
+
+import {
+
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  Button,
+  FlatList,
+  ScrollView,
+} from 'react-native';
+
+const App=() =>{
+const user=[
+  {
+    id:1,
+    name:'Devu'
+  },
+  {
+    id:2,
+    name:'Heeru'
+  },
+  {
+    id:3,
+    name:'Vaibhu'
+  },
+  {
+    id:4,
+    name:'Vidhuu'
+  },
+  {
+    id:5,
+    name:'Vidhuu'
+  },
+  {
+    id:6,
+    name:'Vidhuu'
+  },
+  {
+    id:7,
+    name:'Vidhuu'
+  },
+  {
+    id:8,
+    name:'Vidhuu'
+  },
+]
+  
+  
+  return(
+  <View>
+ 
+  <ScrollView style={{marginBottom:10}}>
+    {
+      user.map((item)=>{
+      return(
+        <View style={styles.container }>
+      <Text style={styles.textbox}>{item.name}</Text>
+    
+    </View>
+      );
+      })}
+  </ScrollView>
+      
+    </View>
+  );
+};
+const styles=StyleSheet.create({
+  textbox:{
+    color:'darkblue',
+    fontSize:25,
+    backgroundColor:"lightpink",
+ 
+    padding:10, 
+    borderRadius:20,
+   
+    textAlignVertical:'center',
+    textAlign:'center'},
+   container: {
+      flex: 1,
+      flexDirection:"row",
+      flexWrap:'wrap'},
+
+  
+
+
+  
+});
+
+
+
+
+export default App;

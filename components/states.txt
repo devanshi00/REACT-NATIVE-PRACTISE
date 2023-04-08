@@ -1,0 +1,49 @@
+import React, {useState} from 'react';
+
+
+import {
+
+  Text,
+  Button,
+  View,
+} from 'react-native';
+
+const App=() =>{
+  const[name,setName]=useState("Devanshi")
+  let data='vidhi';
+  const testName =()=>{
+    setName('Heer')
+    data="peter";
+  }
+  return(
+  <View>
+    <Text>{name} </Text>
+    <Text>{data}
+    {/*note that using state we can update the value of variable already set in the code.It cannot be updated using data = peter as we can see vidhi is not updated to peter Also a given state can be used for a given component only here its app so in other component cannot be used */}</Text>
+  {/*Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+
+React events are named using camelCase, rather than lowercase.
+With JSX you pass a function as the event handler, rather than a string.
+For example, the HTML:
+
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
+is slightly different in React:
+
+<button onClick={activateLasers}>
+  Activate Lasers
+</button> 
+*/}
+ 
+ <Button title='Press Here' onPress={testName} color={'green'}></Button>
+      
+      
+    </View>
+  );
+};
+
+
+
+
+export default App;

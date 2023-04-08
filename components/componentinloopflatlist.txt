@@ -1,0 +1,96 @@
+import React, {useState} from 'react';
+import ExStyles from './style'
+
+
+import {
+
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  Button,
+  FlatList,
+  ScrollViewComponent,
+} from 'react-native';
+
+const App=() =>{
+const user=[
+  {
+    id:1,
+    name:'Devu',
+    
+  },
+  {
+    id:2,
+    name:'Heeru'
+  },
+  {
+    id:3,
+    name:'Vaibhu',
+  
+  },
+  {
+    id:4,
+    name:'Vidhuu'
+  },
+]
+  
+  
+  return(
+  <View>
+ 
+  <FlatList
+  data={user}
+  renderItem={({item})=><UserData item={item}/>}
+  keyExtractor={item=>item.id}
+/>
+      
+    </View>
+  );
+};
+const UserData=(props)=>{
+  const item=props.item;
+  return(
+    <View style={styles.container}>
+      <Text style={styles.textbox}>{item.name}</Text>
+      
+    
+     
+    </View>
+
+  )
+}
+const styles=StyleSheet.create({
+  textbox:{
+    color:'darkblue',
+    fontSize:25,
+    backgroundColor:"lightpink",
+    flex:1,
+ 
+ 
+    borderRadius:20,
+ 
+   
+    
+
+
+  },
+  container :{
+    flex:1,
+    backgroundColor:"lightyellow",
+   flexDirection:'row',
+   width:150,
+    
+   
+    
+    
+    
+
+   
+  }
+})
+
+
+
+
+export default App;

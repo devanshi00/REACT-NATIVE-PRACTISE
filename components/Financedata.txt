@@ -1,0 +1,13 @@
+import {Text,View,Button} from 'react-native'
+const Financedata=()=>{
+    return(
+       < View>
+       <Text>Year 2022: 15k</Text>
+       <Text>Year 2022: 25k</Text>
+       <Text>Year 2022: 35k</Text>
+       <Button title='Press Here' color={'red'}></Button>
+       </View>  
+
+    )
+}
+export default Financedata;

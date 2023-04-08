@@ -1,0 +1,90 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *tsx is basically javascript extension which helps to write html with javascript altogether tsx is javasript xml as per defination
+ *Export Default
+ *Here’s an example of using export default to export a greeting message:
+
+// greetings.js
+const greeting = "Hello, world!";
+export default greeting;
+And here’s an example of importing the default export from another module:
+
+// app.js
+import greeting from "./greetings.js";
+console.log(greeting); // outputs "Hello, world!"
+As you can see, the import statement doesn't need to specify the name of the default export, since there can only be one.
+*Export with Named Exports
+*Here’s an example of using export with named exports to export both a greeting and a farewell message:
+
+// greetings.js
+export const greeting = "Hello, world!";
+export const farewell = "Goodbye, world!";
+And here’s an example of importing the named exports from another module:
+
+// app.js
+import { greeting, farewell } from "./greetings.js";
+console.log(greeting); // outputs "Hello, world!"
+console.log(farewell); // outputs "Goodbye, world!"
+Note that when importing named exports, the import statement must use the exact name of the exported value, surrounded by curly braces.
+*Which One Should You Use?
+The decision to use export default or export with named exports depends on the specifics of your project and how you want to organize your code. Here are some general guidelines:
+
+If you only need to export a single value from a module, or if the module represents a main feature of your application, use export default.
+If you need to export multiple values from a module, or if you want to organize your code into smaller, reusable components, use export with named exports.
+ * @format
+ */
+
+import React from 'react';
+import Financedata from './components/Financedata'
+
+import {
+
+  Text,
+  Button,
+  View,
+} from 'react-native';
+let age=39;
+var email="abc@gmail.com"
+const App=() =>{
+  const fruit =()=>{
+    console.warn("You Pressed Me")
+  }
+  return(
+  <View> 
+ 
+      <Text style={{fontSize: 50}}>Components
+      {/* Components in react native are basically these functions which define the different sections of the page and sometimes even different windows of page which can be written in a different folder of components and linked together in a jsx file.  */ }</Text> 
+      <Text>{age===39?"above 30":"Unknown Age"}</Text>
+      <Text>{email}</Text>
+      <Text>{100*20}</Text>
+      <Text>{UserData()}
+      {/*Function can only be called like this it nannot be directly made here but it is not a good way to call it like this since there are size issues*/ }
+      </Text>
+      <Button title='Press Here' onPress={fruit} color={'green'}></Button>
+      
+      <UserData />{/*better way to call */}
+      
+    </View>
+  );
+};
+function UserData() {
+  return (
+    <View>
+      <Text>Name:Anil  </Text>
+   
+      <Text>Company:Dozee</Text>
+      <Text>Phone:9727122345</Text>
+      
+        {/*component within component */}
+      <Financedata />
+     
+    
+
+    </View>
+  );
+}
+
+
+
+export default App;

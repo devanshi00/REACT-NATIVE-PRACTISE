@@ -1,0 +1,95 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+What is React Hook?
+Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class. It mainly uses to handle the state and side effects in react functional component. React Hooks are a way to use stateful functions inside a functional component. Hooks don’t work inside classes — they let you use React without classes React provides a few built-in Hooks like useState and useEffect.
+
+. It Enforces best practices
+. Easy to under understand
+. Easy to test
+. It increases the performance and so on.
+Mounting methods
+constructor()
+componentWillMount() (Deprecated after RN 0.60)
+render()
+componentDidMount()
+Updating methods
+componentWillReceiveProps() (Deprecated after RN 0.60)
+shouldComponentUpdate()
+componentWillUpdate() (Deprecated after RN 0.60)
+componentDidUpdate()
+Unmounting methods
+componentWillUnmount()
+Error handling methods
+componentDidCatch()
+ * @format
+ */
+
+import React, {useEffect, useState} from 'react';
+import ExStyles from './style'
+
+
+import {
+
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  Button,
+  FlatList,
+  ScrollViewComponent,
+  SectionList,
+} from 'react-native';
+
+const App=() =>{
+  const[count,setcount]=useState[0];
+  const[data,setdata]=useState[10];
+  useEffect(()=>{
+    console.warn("count")
+  },[count]);
+  return(
+<View>
+ <Text>Life cycle with use effect {count}</Text>
+ <Button title='UpdateCount' onPress={()=>setcount(count+1)
+ }/>
+
+      
+    </View>
+  );
+};
+
+
+const styles=StyleSheet.create({
+  textbox:{
+    color:'darkblue',
+    fontSize:25,
+    backgroundColor:"lightpink",
+    flex:1,
+ 
+ 
+    borderRadius:20,
+ 
+   
+    
+
+
+  },
+  container :{
+    flex:1,
+    backgroundColor:"lightyellow",
+   flexDirection:'row',
+   width:150,
+    
+   
+    
+    
+    
+
+   
+  }
+})
+
+
+
+
+export default App;
